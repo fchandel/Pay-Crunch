@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #000 !important;
+
 }
 
 .App-logo {
@@ -7,13 +9,75 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-image: linear-gradient(rgb(240, 240, 240), rgb(255, 255, 255)); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  color: white;
+  padding-bottom: 100px;
+}
+
+.tableDiv {
+  padding: 100px;
+  width: 80%;
+}
+
+.p-20 {
+  margin-left: 20px;
+}
+
+.float-right {
+  float: right;
+  display: flex;
+}
+
+.float-right {
+  float: left;
+  display: flex;
+}
+
+.bottom-bar {
+  padding: 20px;
+  background-color: #1e1b18;
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+}
+
+#myTable {
+  /* background-color: #d8315b; */
+  background-color: #fff;
+  color: #d8315b;
+  /* border-color: black; */
+  border-radius: 10px;
+}
+
+table-dark.table-hover tbody tr:hover {
+  color: black !important;
+}
+
+.table-header {
+  background-color: #1e1b18;
+  color: white;
+}
+
+.button-color {
+  background-color: #1e1b18;
+
+}
+
+.btn-success {
+  color: #fff;
+  background-color: #d8315b !important;
+  border-color: #d8315b !important;
+}
+
+
+
+.black {
   color: white;
 }
 
