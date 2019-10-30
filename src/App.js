@@ -103,10 +103,17 @@ class App extends React.Component {
     }), () => {console.log("Add Row", this.state)})
   }
 
+  displayHelp() {
+    if (this.state.counter == 0) {
+      return (<h2 className='hint'>Click "Add Day" to get started!</h2>)
+    }
+  }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
+          {this.displayHelp()}
           <div className='tableDiv'>
             <Table id="myTable" striped hover variant="dark">
               <thead className='table-header'>
