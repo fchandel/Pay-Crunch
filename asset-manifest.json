@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/employee-hours-calculator/static/css/main.c74706b4.chunk.css",
+    "main.js": "/employee-hours-calculator/static/js/main.adcd5210.chunk.js",
+    "main.js.map": "/employee-hours-calculator/static/js/main.adcd5210.chunk.js.map",
+    "runtime-main.js": "/employee-hours-calculator/static/js/runtime-main.3306fd01.js",
+    "runtime-main.js.map": "/employee-hours-calculator/static/js/runtime-main.3306fd01.js.map",
+    "static/css/2.2e152c32.chunk.css": "/employee-hours-calculator/static/css/2.2e152c32.chunk.css",
+    "static/js/2.4880ce24.chunk.js": "/employee-hours-calculator/static/js/2.4880ce24.chunk.js",
+    "static/js/2.4880ce24.chunk.js.map": "/employee-hours-calculator/static/js/2.4880ce24.chunk.js.map",
+    "index.html": "/employee-hours-calculator/index.html",
+    "precache-manifest.836e5dde0150bab1f67ad9a70ada0a1b.js": "/employee-hours-calculator/precache-manifest.836e5dde0150bab1f67ad9a70ada0a1b.js",
+    "service-worker.js": "/employee-hours-calculator/service-worker.js",
+    "static/css/2.2e152c32.chunk.css.map": "/employee-hours-calculator/static/css/2.2e152c32.chunk.css.map",
+    "static/css/main.c74706b4.chunk.css.map": "/employee-hours-calculator/static/css/main.c74706b4.chunk.css.map",
+    "static/media/logo.svg": "/employee-hours-calculator/static/media/logo.25bf045c.svg"
+  }
+}
