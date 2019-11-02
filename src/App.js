@@ -121,7 +121,7 @@ class App extends React.Component {
           defaultStart={this.state.defaultStart}
           defaultEnd={this.state.defaultEnd}
           onChangeStart={this.onChangeStart}
-          onChangeEnd={this.onChangeStart} />
+          onChangeEnd={this.onChangeEnd} />
         :
         ''
     )
