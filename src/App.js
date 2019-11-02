@@ -1,20 +1,16 @@
 import React from 'react';
-import logo, { ReactComponent } from './logo.svg';
 import './App.css';
-import Table from 'react-bootstrap/Table'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Button from 'react-bootstrap/Button'
-import TimePicker from 'rc-time-picker';
-import ReactDOM from 'react-dom';
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment'
-import update from 'immutability-helper';
+import TableHours from './Table.js'
 
 class App extends React.Component {
-  
+
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       counter: 0,
       format: 'h:mm a',
       totalHours: 0,
@@ -28,6 +24,8 @@ class App extends React.Component {
     this.addRow = this.addRow.bind(this);
     this.calculateHours = this.calculateHours.bind(this);
     this.calculateTotalForDay = this.calculateTotalForDay.bind(this);
+    this.displayHelp = this.displayHelp.bind(this);
+    this.displayTable = this.displayTable.bind(this);
   }
 
   calculateDifferenceInDefaultHours() {
@@ -49,12 +47,12 @@ class App extends React.Component {
       totalHoursInMonth += day.total
     ))
 
-    this.setState({totalHours: totalHoursInMonth})
-  } 
+    this.setState({ totalHours: totalHoursInMonth })
+  }
 
   calculateTotalForDay(index) {
     let days = [...this.state.days];
-    var startTime = days[index].start                 
+    var startTime = days[index].start
     var endTime = days[index].end
 
     var startDate = moment(startTime, 'h:mm a')
@@ -66,28 +64,26 @@ class App extends React.Component {
     var hoursRounded = Math.round(hours * 20) / 20;
 
 
-    days[index].total = hoursRounded 
+    days[index].total = hoursRounded
   }
 
   onChangeStart(value, index) {
     // create the copy of state array
-    let days = [...this.state.days];     
+    let days = [...this.state.days];
     days[index].start = value.format(this.state.format);
-    this.setState({ days: days }, () => {console.log("On Change Start", this.state)}); 
+    this.setState({ days: days }, () => { console.log("On Change Start", this.state) });
 
     this.calculateTotalForDay(index)
   }
 
   onChangeEnd(value, index) {
     // create the copy of state array
-    let days = [...this.state.days];     
+    let days = [...this.state.days];
     days[index].end = value.format(this.state.format);
-    this.setState({ days: days }, () => {console.log("On Change End",this.state)}); 
+    this.setState({ days: days }, () => { console.log("On Change End", this.state) });
 
     this.calculateTotalForDay(index)
   }
-
-
 
   addRow() {
     var day = {
@@ -100,13 +96,35 @@ class App extends React.Component {
     this.setState(prevState => ({
       counter: this.state.counter + 1,
       days: [...prevState.days, day]
-    }), () => {console.log("Add Row", this.state)})
+    }), () => { console.log("Add Row", this.state) })
   }
 
   displayHelp() {
-    if (this.state.counter == 0) {
+    if (this.counterActive) {
       return (<h2 className='hint'>Click "Add Day" to get started!</h2>)
     }
+  }
+
+  counterActive() {
+    if (this.state.counter != 0) {
+      return true
+    }
+    return false
+  }
+
+  displayTable() {
+    return (
+      this.counterActive() ?
+        <TableHours
+          format={this.state.format}
+          days={this.state.days}
+          defaultStart={this.state.defaultStart}
+          defaultEnd={this.state.defaultEnd}
+          onChangeStart={this.onChangeStart}
+          onChangeEnd={this.onChangeStart} />
+        :
+        ''
+    )
   }
 
   render() {
@@ -115,49 +133,7 @@ class App extends React.Component {
         <header className="App-header">
           {this.displayHelp()}
           <div className='tableDiv'>
-            <Table id="myTable" striped hover variant="dark">
-              <thead className='table-header'>
-                <tr>
-                  <th>#</th>
-                  <th>Start Time</th>
-                  <th>End Time</th>
-                  <th>Hours </th>
-                </tr>
-              </thead>
-              <tbody>
-                {console.log(this.state.days)}
-                {this.state.days.map((day) => (
-                  <tr>
-                       <td>{day.id}</td>
-                       <td>  
-                         <TimePicker
-                          showSecond={false}
-                          defaultValue={this.state.defaultStart}
-                          className="xxx"
-                          onChange={ (e) => this.onChangeStart(e, day.id)}
-                          format={this.state.format}
-                          use12Hours
-                          inputReadOnly
-                        />
-                       </td>
-                       <td>
-                         <TimePicker
-                          showSecond={false}
-                          defaultValue={this.state.defaultEnd}
-                          className="xxx"
-                          onChange={(e) => this.onChangeEnd(e, day.id)}
-                          format={this.state.format}
-                          use12Hours
-                          inputReadOnly
-                        />
-                      </td>
-                      <td>{day.total}</td>
-                    </tr>
-                ))}
-                
-              </tbody>
-            </Table>
-            
+            {this.displayTable()}
           </div>
           <div className="black bottom-bar">
             <div className='float-left'>
@@ -165,7 +141,7 @@ class App extends React.Component {
             </div>
             <div className='float-right'>
               <Button variant="success button-color" className='p-20' onClick={this.addRow}>Add Day</Button>
-              <br/>
+              <br />
               <Button variant="success" className='p-20' onClick={this.calculateHours}>Calculate Hours</Button>
             </div>
           </div>
