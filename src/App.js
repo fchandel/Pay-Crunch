@@ -100,7 +100,7 @@ class App extends React.Component {
   }
 
   displayHelp() {
-    if (this.counterActive) {
+    if (!this.counterActive()) {
       return (<h2 className='hint'>Click "Add Day" to get started!</h2>)
     }
   }
