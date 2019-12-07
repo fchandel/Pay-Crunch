@@ -136,13 +136,13 @@ class App extends React.Component {
             {this.displayTable()}
           </div>
           <div className="white bottom-bar">
-            <div className="container-max">
-              <div className='float-left'>
+            <div className="container-max grid-bottom">
+              <div className='float-left item1'>
                 Total Hours Worked This Month: {this.state.totalHours}
               </div>
-              <div className='float-right'>
+              <div className='buttons'>
                 <Button variant="success" className='p-20' onClick={this.addRow}>Add Day</Button>
-                <br />
+                <br/>
                 <Button variant="success" className='p-20' onClick={this.calculateHours}>Calculate Hours</Button>
               </div>
             </div>

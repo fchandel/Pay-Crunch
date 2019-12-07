@@ -16,6 +16,23 @@
   max-width: 960px;
 }
 
+.grid-bottom {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.buttons {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: inline-flex;
+  margin: 0 auto;
+}
+
 th {
   padding-right: 40px !important;
   padding-left: 40px !important;
@@ -35,7 +52,10 @@ th {
 }
 
 .hint {
-  color: black;
+  color: #730998;
+  font-family: Calibri, Georgia, Times, 'Times New Roman', serif;
+  /* background: linear-gradient(132deg, #730998 0%, #F98585 97%); */
+  
 }
 
 .tableDiv {
@@ -54,6 +74,17 @@ th {
     padding-left: 10px !important;
   }
 
+  .item1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  
+  .btn1 {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  
+
 }
 
 .p-20 {
@@ -62,11 +93,6 @@ th {
 
 .float-right {
   float: right;
-  display: flex;
-}
-
-.float-right {
-  float: left;
   display: flex;
 }
 
@@ -127,9 +153,15 @@ td {
   color: #09d3ac;
 }
 
+.rc-time-picker-panel-inner {
+  border: 1px solid #fff !important;
+}
 
-
-
+.rc-time-picker-input {
+  color: #fff !important;
+  background-color: #ffffff54 !important;
+  border: 1px solid #d9d9d900 !important;
+}
 
 
 
