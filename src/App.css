@@ -16,6 +16,12 @@
   max-width: 960px;
 }
 
+th {
+  padding-right: 40px !important;
+  padding-left: 40px !important;
+}
+
+
 .App-header {
   /* background-image: linear-gradient(rgb(240, 240, 240), rgb(255, 255, 255)); */
   min-height: 100vh;
@@ -42,6 +48,12 @@
     padding: 5%;
     width: 85%;
   }
+  
+  th {
+    padding-right: 10px !important;
+    padding-left: 10px !important;
+  }
+
 }
 
 .p-20 {
@@ -79,10 +91,6 @@
 }
 
 
-th {
-  padding-right: 40px !important;
-  padding-left: 40px !important;
-}
 
 td {
   border-top: 1px solid rgb(255, 255, 255) !important;
@@ -118,3 +126,12 @@ td {
 .App-link {
   color: #09d3ac;
 }
+
+
+
+
+
+
+
+
+
