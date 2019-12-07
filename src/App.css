@@ -38,9 +38,7 @@ th {
   padding-left: 40px !important;
 }
 
-
 .App-header {
-  /* background-image: linear-gradient(rgb(240, 240, 240), rgb(255, 255, 255)); */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -54,8 +52,6 @@ th {
 .hint {
   color: #730998;
   font-family: Calibri, Georgia, Times, 'Times New Roman', serif;
-  /* background: linear-gradient(132deg, #730998 0%, #F98585 97%); */
-  
 }
 
 .tableDiv {
@@ -84,7 +80,14 @@ th {
     grid-column-end: 3;
   }
   
+  .rc-time-picker-clear {
+    display: none;
+  }
 
+}
+
+.rc-time-picker-clear-icon::after {
+  color: #fff !important;
 }
 
 .p-20 {
@@ -110,18 +113,14 @@ th {
   box-shadow: 5px 6px 27px 0px rgba(0,0,0,0.75);
 }
 
-
 .table-dark th, .table-dark thead th {
   border-bottom: 1px solid rgb(255, 255, 255) !important;
   border-top: 0px !important;
 }
 
-
-
 td {
   border-top: 1px solid rgb(255, 255, 255) !important;
 }
-
 
 #myTable {
   color: white;

@@ -68,6 +68,10 @@ class App extends React.Component {
   }
 
   onChangeStart(value, index) {
+
+    if (value == undefined || value == '' || value == null) {
+      return
+    }
     // create the copy of state array
     let days = [...this.state.days];
     days[index].start = value.format(this.state.format);
@@ -77,6 +81,10 @@ class App extends React.Component {
   }
 
   onChangeEnd(value, index) {
+    
+    if (value == undefined || value == '' || value == null) {
+      return
+    }
     // create the copy of state array
     let days = [...this.state.days];
     days[index].end = value.format(this.state.format);
@@ -141,9 +149,9 @@ class App extends React.Component {
                 Total Hours Worked This Month: {this.state.totalHours}
               </div>
               <div className='buttons'>
-                <Button variant="success" className='p-20' onClick={this.addRow}>Add Day</Button>
+                <Button variant="success" className='p-20 shadow-none' onClick={this.addRow}>Add Day</Button>
                 <br/>
-                <Button variant="success" className='p-20' onClick={this.calculateHours}>Calculate Hours</Button>
+                <Button variant="success" className='p-20 shadow-none' onClick={this.calculateHours}>Calculate Hours</Button>
               </div>
             </div>
           </div>
