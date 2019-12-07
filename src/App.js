@@ -132,17 +132,19 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           {this.displayHelp()}
-          <div className='tableDiv'>
+          <div className='tableDiv container-max'>
             {this.displayTable()}
           </div>
-          <div className="black bottom-bar">
-            <div className='float-left'>
-              Total Hours Worked This Month: {this.state.totalHours}
-            </div>
-            <div className='float-right'>
-              <Button variant="success button-color" className='p-20' onClick={this.addRow}>Add Day</Button>
-              <br />
-              <Button variant="success" className='p-20' onClick={this.calculateHours}>Calculate Hours</Button>
+          <div className="white bottom-bar">
+            <div className="container-max">
+              <div className='float-left'>
+                Total Hours Worked This Month: {this.state.totalHours}
+              </div>
+              <div className='float-right'>
+                <Button variant="success" className='p-20' onClick={this.addRow}>Add Day</Button>
+                <br />
+                <Button variant="success" className='p-20' onClick={this.calculateHours}>Calculate Hours</Button>
+              </div>
             </div>
           </div>
         </header>
