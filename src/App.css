@@ -49,8 +49,14 @@ th {
   padding-bottom: 100px;
 }
 
+.icon {
+  margin: 10px;
+  color: #F05F57;
+  filter: invert(47%) sepia(40%) saturate(2192%) hue-rotate(329deg) brightness(102%) contrast(88%);
+}
+
 .hint {
-  color: #730998;
+  color: #F05F57;
   font-family: Calibri, Georgia, Times, 'Times New Roman', serif;
 }
 
@@ -102,7 +108,9 @@ th {
 .bottom-bar {
   padding: 20px;
   background: rgb(88,3,3);
-  background: linear-gradient(132deg, #730998 0%, #F98585 97%);
+  background-color: #8BC6EC;
+  background-image: linear-gradient( 135deg, #F05F57 10%, #360940 100%);
+  /* background: linear-gradient(132deg, #730998 0%, #F98585 97%); */
   /* background: linear-gradient(132deg, rgba(88,3,3,1) 0%, rgba(181,29,120,1) 90%); */
   /* background-color: #1e1b18; */
   width: 100%;
@@ -125,11 +133,72 @@ td {
 #myTable {
   color: white;
   background: rgb(88,3,3);
-  background: linear-gradient(132deg, #730998 0%, #F98585 97%);
+  background-image: linear-gradient( 135deg, #F05F57 10%, #360940 100%);
+  /* background: linear-gradient(132deg, #730998 0%, #F98585 97%); */
   border-radius: 10px;
   -webkit-box-shadow: 5px 6px 27px 0px rgba(0, 0, 0, 0.35);
   -moz-box-shadow: 5px 6px 27px 0px rgba(0,0,0,0.35);
   box-shadow: 5px 6px 27px 0px rgba(0,0,0,0.35);
+}
+
+.tableToPrint {
+  padding: 20px;
+  margin: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.tableToPrint td{
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.tableToPrint thead {
+  font-weight: bold;
+  font-size: 22px;
+  margin: 20px;
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.tableToPrint tr:nth-child(2n) {
+  color: rgb(92, 92, 92);
+}
+
+
+.print {
+	display: none;
+}
+@media print {
+	.no-print  {
+		display: none;
+	}
+	.print  {
+		display: block;
+  }
+  
+  .tableToPrint {
+    padding: 10%;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .tableToPrint tr:nth-child(2n) {
+    color: rgb(92, 92, 92);
+  }
+}
+
+
+.totalRowForPrint {
+  margin: 0 auto;
+  padding: 20px;
+  width: 50%;
+  font-size: 22px;
+}
+
+.totalRowForPrint p {
+  font-size: 22px;
 }
 
 .btn-success {

@@ -5,18 +5,21 @@ import Button from 'react-bootstrap/Button'
 import 'rc-time-picker/assets/index.css';
 import moment from 'moment'
 import TableHours from './Table.js'
+import icon from "../src/images/grid.png"
 
 class App extends React.Component {
 
   constructor(props) {
     super(props);
+
     this.state = {
       counter: 0,
       format: 'h:mm a',
       totalHours: 0,
-      days: [],
-      defaultStart: moment().hour(9).minute(0),
-      defaultEnd: moment().hour(19).minute(0)
+      days: [], // var day = { id, start, end, total}
+      defaultStart: moment().hour(10).minute(0),
+      defaultEnd: moment().hour(19).minute(0),
+      employeeName: ''
     };
 
     this.onChangeStart = this.onChangeStart.bind(this);
@@ -26,6 +29,7 @@ class App extends React.Component {
     this.calculateTotalForDay = this.calculateTotalForDay.bind(this);
     this.displayHelp = this.displayHelp.bind(this);
     this.displayTable = this.displayTable.bind(this);
+    this.printReport = this.printReport.bind(this);
   }
 
   calculateDifferenceInDefaultHours() {
@@ -75,7 +79,11 @@ class App extends React.Component {
     // create the copy of state array
     let days = [...this.state.days];
     days[index].start = value.format(this.state.format);
-    this.setState({ days: days }, () => { console.log("On Change Start", this.state) });
+
+    //set new default start as moment object
+    var newDefaultStart = moment(days[index].start, ["h:mm A"]);
+
+    this.setState({ days: days, defaultStart: newDefaultStart }, () => { console.log("On Change Start", this.state) });
 
     this.calculateTotalForDay(index)
   }
@@ -88,7 +96,11 @@ class App extends React.Component {
     // create the copy of state array
     let days = [...this.state.days];
     days[index].end = value.format(this.state.format);
-    this.setState({ days: days }, () => { console.log("On Change End", this.state) });
+
+    //set new default end in moment object
+    var newDefaultEnd = moment(days[index].end, ["h:mm A"]);
+
+    this.setState({ days: days, defaultEnd: newDefaultEnd }, () => { console.log("On Change End", this.state) });
 
     this.calculateTotalForDay(index)
   }
@@ -104,15 +116,21 @@ class App extends React.Component {
     this.setState(prevState => ({
       counter: this.state.counter + 1,
       days: [...prevState.days, day]
-    }), () => { console.log("Add Row", this.state) })
+    }))
   }
 
   displayHelp() {
     if (!this.counterActive()) {
-      return (<h2 className='hint'>Click "Add Day" to get started!</h2>)
+      return (
+        <div>
+          <h2 className='hint'>Click "Add Day" to get started!</h2>
+          <img className='icon' src={icon} height="100px" />
+        </div>
+        )
     }
   }
 
+  // Check if any days have been added
   counterActive() {
     if (this.state.counter != 0) {
       return true
@@ -135,9 +153,88 @@ class App extends React.Component {
     )
   }
 
+  setupHeader(table) {
+    var header = table.createTHead()
+
+    var row = header.insertRow()
+    var id = row.insertCell(0)
+    var start = row.insertCell(1)
+    var end = row.insertCell(2)
+    var total = row.insertCell(3)
+    id.innerHTML = 'Day #'
+    start.innerHTML = "Start Time"
+    end.innerHTML = "End Time"
+    total.innerHTML = "Total Time Worked"  
+  }
+
+  setupTable() {
+    var table = document.createElement('table')
+    table.classList.add('tableToPrint')
+    table.classList.add('print')
+
+    var format = this.state.format
+
+    this.setupHeader(table)
+
+    this.state.days.map(function(key,map) {
+
+      var newStart = moment(key.start, ["h:mm A"]);
+      var newEnd = moment(key.end, ["h:mm A"]);
+
+      console.log("key", key)
+      console.log("key start", key.start)
+      console.log("key end", key.end)
+      var row = table.insertRow()
+      var id = row.insertCell(0)
+      var start = row.insertCell(1)
+      var end = row.insertCell(2)
+      var total = row.insertCell(3)
+      id.innerHTML = key.id
+      start.innerHTML = newStart.format(format);
+      end.innerHTML = newEnd.format(format);
+      total.innerHTML = key.total
+    })
+
+
+    // document.body.innerHTML =
+    //   "<html><head><title></title></head><body>" + table.outerHTML + totalRowForPrint.outerHTML +
+    //   "</body></html>"
+
+    document.body.appendChild(table)
+
+    return table
+  }
+
+  setupTotalRow() {
+    var totalHoursWorked = this.state.totalHours
+
+    var totalRowForPrint = document.createElement('div')
+    totalRowForPrint.classList.add('totalRowForPrint')
+    totalRowForPrint.classList.add('print')
+    totalRowForPrint.innerHTML = 'Total Hours worked = ' + totalHoursWorked
+
+    document.body.appendChild(totalRowForPrint)
+
+    return totalRowForPrint
+  }
+
+  async printReport() {
+    await this.calculateHours()
+    var divElements = document.getElementById("myTable")
+  
+    var table = this.setupTable()
+    var totalRowForPrint = this.setupTotalRow()
+  
+    window.print()
+
+    document.body.removeChild(table)
+    document.body.removeChild(totalRowForPrint)
+  
+  }
+
   render() {
     return (
-      <div className="App">
+      <div className="App no-print">
         <header className="App-header">
           {this.displayHelp()}
           <div className='tableDiv container-max'>
@@ -152,6 +249,11 @@ class App extends React.Component {
                 <Button variant="success" className='p-20 shadow-none' onClick={this.addRow}>Add Day</Button>
                 <br/>
                 <Button variant="success" className='p-20 shadow-none' onClick={this.calculateHours}>Calculate Hours</Button>
+                <br/>
+                {this.state.counter ? 
+                <Button variant="success" className='p-20 shadow-none' onClick={this.printReport}>Print</Button> 
+                : ''}
+
               </div>
             </div>
           </div>

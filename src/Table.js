@@ -10,7 +10,6 @@ class TableHours extends React.Component {
 
     render() {
         return (
-
             <Table id="myTable" striped hover variant="dark">
                 <thead className='table-header'>
                     <tr>
@@ -23,8 +22,8 @@ class TableHours extends React.Component {
                 <tbody>
                     {/* {console.log(this.state.days)} */}
                     {this.props.days.map((day) => (
-                        <tr>
-                            <td>{day.id}</td>
+                        <tr key={day.id}>
+                            <td>{day.id + 1}</td>
                             <td>
                                 <TimePicker
                                     showSecond={false}
