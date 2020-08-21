@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/employee-hours-calculator/static/css/main.c195b9dd.chunk.css",
-    "main.js": "/employee-hours-calculator/static/js/main.238786a3.chunk.js",
-    "main.js.map": "/employee-hours-calculator/static/js/main.238786a3.chunk.js.map",
-    "runtime-main.js": "/employee-hours-calculator/static/js/runtime-main.3306fd01.js",
-    "runtime-main.js.map": "/employee-hours-calculator/static/js/runtime-main.3306fd01.js.map",
-    "static/css/2.1ed1a269.chunk.css": "/employee-hours-calculator/static/css/2.1ed1a269.chunk.css",
-    "static/js/2.42b0f993.chunk.js": "/employee-hours-calculator/static/js/2.42b0f993.chunk.js",
-    "static/js/2.42b0f993.chunk.js.map": "/employee-hours-calculator/static/js/2.42b0f993.chunk.js.map",
-    "index.html": "/employee-hours-calculator/index.html",
-    "precache-manifest.827cb6a09cd8274fb606aeaceec5ad70.js": "/employee-hours-calculator/precache-manifest.827cb6a09cd8274fb606aeaceec5ad70.js",
-    "service-worker.js": "/employee-hours-calculator/service-worker.js",
-    "static/css/2.1ed1a269.chunk.css.map": "/employee-hours-calculator/static/css/2.1ed1a269.chunk.css.map",
-    "static/css/main.c195b9dd.chunk.css.map": "/employee-hours-calculator/static/css/main.c195b9dd.chunk.css.map"
+    "main.css": "paycrunch.app/static/css/main.c195b9dd.chunk.css",
+    "main.js": "paycrunch.app/static/js/main.1a79546b.chunk.js",
+    "main.js.map": "paycrunch.app/static/js/main.1a79546b.chunk.js.map",
+    "runtime-main.js": "paycrunch.app/static/js/runtime-main.a311515d.js",
+    "runtime-main.js.map": "paycrunch.app/static/js/runtime-main.a311515d.js.map",
+    "static/css/2.1ed1a269.chunk.css": "paycrunch.app/static/css/2.1ed1a269.chunk.css",
+    "static/js/2.42b0f993.chunk.js": "paycrunch.app/static/js/2.42b0f993.chunk.js",
+    "static/js/2.42b0f993.chunk.js.map": "paycrunch.app/static/js/2.42b0f993.chunk.js.map",
+    "index.html": "paycrunch.app/index.html",
+    "precache-manifest.7a0934a9ccbccdc5713d5948a7b83793.js": "paycrunch.app/precache-manifest.7a0934a9ccbccdc5713d5948a7b83793.js",
+    "service-worker.js": "paycrunch.app/service-worker.js",
+    "static/css/2.1ed1a269.chunk.css.map": "paycrunch.app/static/css/2.1ed1a269.chunk.css.map",
+    "static/css/main.c195b9dd.chunk.css.map": "paycrunch.app/static/css/main.c195b9dd.chunk.css.map"
   }
 }
