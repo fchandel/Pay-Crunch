@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "paycrunch.app/static/css/main.c195b9dd.chunk.css",
-    "main.js": "paycrunch.app/static/js/main.1a79546b.chunk.js",
-    "main.js.map": "paycrunch.app/static/js/main.1a79546b.chunk.js.map",
-    "runtime-main.js": "paycrunch.app/static/js/runtime-main.a311515d.js",
-    "runtime-main.js.map": "paycrunch.app/static/js/runtime-main.a311515d.js.map",
-    "static/css/2.1ed1a269.chunk.css": "paycrunch.app/static/css/2.1ed1a269.chunk.css",
-    "static/js/2.42b0f993.chunk.js": "paycrunch.app/static/js/2.42b0f993.chunk.js",
-    "static/js/2.42b0f993.chunk.js.map": "paycrunch.app/static/js/2.42b0f993.chunk.js.map",
-    "index.html": "paycrunch.app/index.html",
-    "precache-manifest.7a0934a9ccbccdc5713d5948a7b83793.js": "paycrunch.app/precache-manifest.7a0934a9ccbccdc5713d5948a7b83793.js",
-    "service-worker.js": "paycrunch.app/service-worker.js",
-    "static/css/2.1ed1a269.chunk.css.map": "paycrunch.app/static/css/2.1ed1a269.chunk.css.map",
-    "static/css/main.c195b9dd.chunk.css.map": "paycrunch.app/static/css/main.c195b9dd.chunk.css.map"
+    "main.css": "/static/css/main.c195b9dd.chunk.css",
+    "main.js": "/static/js/main.77c5c32e.chunk.js",
+    "main.js.map": "/static/js/main.77c5c32e.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.71810478.js",
+    "runtime-main.js.map": "/static/js/runtime-main.71810478.js.map",
+    "static/css/2.1ed1a269.chunk.css": "/static/css/2.1ed1a269.chunk.css",
+    "static/js/2.42b0f993.chunk.js": "/static/js/2.42b0f993.chunk.js",
+    "static/js/2.42b0f993.chunk.js.map": "/static/js/2.42b0f993.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.1144af5a1e6f7daa564ac9466d26b348.js": "/precache-manifest.1144af5a1e6f7daa564ac9466d26b348.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.1ed1a269.chunk.css.map": "/static/css/2.1ed1a269.chunk.css.map",
+    "static/css/main.c195b9dd.chunk.css.map": "/static/css/main.c195b9dd.chunk.css.map"
   }
 }
