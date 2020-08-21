@@ -1,3 +1,7 @@
+Pay Crunch was developed to digitize monthly employee hour calculations. 
+
+You can visit this project at paycrunch.app.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
